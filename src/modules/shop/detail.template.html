@@ -1,0 +1,12 @@
+<section ng-controller="DetailController as vm">
+    <p><a href="shop/list">← Back to Products</a></p>
+    <div ng-if="vm.loading">Loading…</div>
+    <div ng-if="!vm.loading && vm.product">
+      <h2>{{ vm.product.name }}</h2>
+      <img ng-src="{{vm.product.img}}" style="max-width:320px;">
+      <p style="font-size:18px;">${{ vm.product.price | number:2 }}</p>
+      <label>Qty <input type="number" ng-model="vm.qty" min="1" style="width:60px;"></label>
+      <button ng-click="vm.add()">Add to Cart</button>
+    </div>
+  </section>
+  

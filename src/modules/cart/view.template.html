@@ -1,0 +1,28 @@
+<section ng-controller="CartViewController as vm">
+    <h2>Your Cart</h2>
+    <div ng-if="!vm.items.length">Cart is empty.</div>
+    <table ng-if="vm.items.length" border="1" cellpadding="6" cellspacing="0">
+      <tr><th>Item</th><th>Price</th><th>Qty</th><th>Subtotal</th><th></th></tr>
+      <tr ng-repeat="it in vm.items">
+        <td>{{ it.name }}</td>
+        <td>${{ it.price | number:2 }}</td>
+        <td>
+          <button ng-click="vm.dec(it)">−</button>
+          <input style="width:40px;text-align:center" ng-model="it.qty" ng-change="vm.inc({id:it.id, qty:it.qty-1});" />
+          <button ng-click="vm.inc(it)">+</button>
+        </td>
+        <td>${{ (it.price*it.qty) | number:2 }}</td>
+        <td><button ng-click="vm.remove(it)">Remove</button></td>
+      </tr>
+      <tr>
+        <td colspan="3" align="right"><strong>Total</strong></td>
+        <td><strong>${{ vm.total | number:2 }}</strong></td>
+        <td></td>
+      </tr>
+    </table>
+    <div style="margin-top:10px;">
+      <a href="checkout/address">Go to Checkout</a>
+      <button ng-click="vm.clear()">Clear Cart</button>
+    </div>
+  </section>
+  

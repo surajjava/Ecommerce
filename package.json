@@ -1,0 +1,32 @@
+{
+  "name": "my-angularjs-app",
+  "version": "1.0.0",
+  "description": "A simple AngularJS application",
+  "engines": {
+    "node": "14.20.0",
+    "npm": "6.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --config bs-config.js",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.8.3",
+    "angular-animate": "^1.8.3",
+    "angular-aria": "^1.8.3",
+    "angular-cookies": "^1.8.3",
+    "angular-messages": "^1.8.3",
+    "angular-resource": "^1.8.3",
+    "angular-route": "^1.8.3",
+    "angular-sanitize": "^1.8.3",
+    "angular-touch": "^1.8.3",
+    "oclazyload": "^1.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "connect-history-api-fallback": "^2.0.0"
+  }
+}

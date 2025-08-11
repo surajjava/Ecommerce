@@ -1,0 +1,10 @@
+<section ng-controller="CheckoutAddressController as vm">
+    <h2>Shipping Address</h2>
+    <form ng-submit="vm.next()">
+      <input placeholder="Full name" ng-model="vm.form.name" required><br>
+      <input placeholder="Address"   ng-model="vm.form.addr" required><br>
+      <input placeholder="City"      ng-model="vm.form.city" required><br>
+      <button type="submit">Continue to Payment</button>
+    </form>
+  </section>
+  

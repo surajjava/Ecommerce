@@ -1,0 +1,19 @@
+<section class="stack" ng-controller="ProductsController as vm">
+  <h1>Products</h1>
+  <div class="row">
+    <input type="text" ng-model="vm.search" placeholder="Search products...">
+    <select ng-model="vm.category" ng-options="c for c in vm.categories()"></select>
+    <select ng-model="vm.sort">
+      <option value="title">Sort by name</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+    </select>
+  </div>
+
+  <div ng-if="vm.loading" class="muted">Loading…</div>
+  <div ng-if="!vm.loading && !vm.filtered().length" class="muted">No products found.</div>
+
+  <div class="grid" ng-if="!vm.loading && vm.filtered().length">
+    <product-card ng-repeat="p in vm.filtered()" product="p"></product-card>
+  </div>
+</section>

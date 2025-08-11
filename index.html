@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8" />
+  <title>My AngularJS App</title>
+  <base href="/hcl/" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles/main.css" />
+
+</head>
+<body>
+  <app-header></app-header>
+  <main ng-view></main>
+  <app-footer></app-footer>
+
+  <!-- Angular libs -->
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/node_modules/angular-route/angular-route.js"></script>
+  <script src="/node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+ 
+  <!-- Eager module(s) -->
+  <script src="modules/home/home.module.js"></script>
+
+  <!-- App core -->
+  <script src="app/app.module.js"></script>
+  <script src="routing/app.routes.js"></script>
+
+  <!-- Components -->
+  <script src="components/header/header.component.js"></script>
+  <script src="components/footer/footer.component.js"></script>
+
+  <script src="services/product.service.js"></script>
+  <script src="services/cart.service.js"></script>
+
+  <!-- Feature code for eager modules -->
+  <script src="modules/home/home.controller.js"></script>
+</body>
+</html>

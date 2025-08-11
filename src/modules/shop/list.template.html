@@ -1,0 +1,19 @@
+<section ng-controller="ListController as vm" class="container">
+    <h2>Products</h2>
+    <p class="muted" ng-if="vm.loading">Loading…</p>
+  
+    <div class="product-grid">
+      <article class="card" ng-repeat="p in vm.products">
+        <img ng-src="{{p.img}}" alt="{{p.name}}">
+        <div class="card-body">
+          <div class="card-title">{{p.name}}</div>
+          <div class="price">${{ p.price | number:2 }}</div>
+          <div class="actions">
+            <a class="btn" href="shop/detail/{{p.id}}">View</a>
+            <button class="btn primary" ng-click="vm.add(p)">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  
